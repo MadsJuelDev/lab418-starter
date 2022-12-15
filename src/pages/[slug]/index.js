@@ -34,7 +34,6 @@ export default function customPage({ data }) {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params)
   if(params.slug == '404'){
     const route = new Router()
     route.go('404')

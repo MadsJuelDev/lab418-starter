@@ -5,7 +5,7 @@ import YouTube from 'react-youtube'
 
 const Preview = ({ value }) => {
   const id = getYouTubeId(value.url)
-  const url = `https://www.youtube.com/embed/${id}`
+  const url = `https://www.youtube-nocookie.com/embed/${id}`
 
   if (!id) {
     return <p>Missing Youtube URL</p>

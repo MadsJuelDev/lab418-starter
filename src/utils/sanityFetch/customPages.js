@@ -7,7 +7,6 @@ export async function getAllSlugs() {
 }
 
 export async function getCustomPage(slug) {
-  console.log(slug)
   const componentQuery = `
     _type=="hero" => {
       ...,

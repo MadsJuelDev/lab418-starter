@@ -34,7 +34,7 @@ const Gallery = ({ data }) => {
                     .height(500)
                     .fit('crop')
                     .url()}
-                  alt={item.image.alt}
+                  alt={item.alt}
                   width={500}
                   height={500}
                   objectFit='cover'

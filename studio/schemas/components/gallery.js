@@ -26,6 +26,11 @@ export default {
               type: 'blockContent',
               title: 'Text',
             },
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alt text',
+            },
           ],
         },
       ],
