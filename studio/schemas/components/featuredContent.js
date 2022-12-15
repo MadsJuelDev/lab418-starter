@@ -21,14 +21,7 @@ export default {
     },
   ],
   fields: [
-    {
-      // setting - should be in a tab
-      title: "Align content left or right",
-      name: "alternate",
-      type: "boolean",
-      initialValue: false,
-      group: "settings",
-    },
+    
     {
       title: "Title",
       name: "title",
@@ -45,11 +38,24 @@ export default {
       group: "settings",
     },
     {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+      group: "settings"
+    },
+    {
       title: "Content",
       name: "content",
       type: "blockContent",
     },
-
+    {
+      // setting - should be in a tab
+      title: "Align content left or right",
+      name: "alternate",
+      type: "boolean",
+      initialValue: false,
+      group: "settings",
+    },
     {
       title: "Background type",
       name: "bgtype",

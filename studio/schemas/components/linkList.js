@@ -4,6 +4,11 @@ export default {
   type: 'object',
   fields: [
     {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+    },
+    {
       name: 'items',
       title: 'Links',
       type: 'array',

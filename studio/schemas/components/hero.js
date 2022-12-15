@@ -60,11 +60,16 @@ export default {
       group: "settings",
     },
     {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+      group: "settings"
+    },
+    {
       title: "Content",
       name: "content",
       type: "blockContent",
     },
-
     {
       title: "Background type",
       name: "bgtype",

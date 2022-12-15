@@ -13,49 +13,43 @@ const Hero = ({ data }) => {
   // console.log(yturl)
 
   return (
-    <div>
+    <div className='h-[100vh]'>
       {data.bgtype === 'video' && (
         <>
           {data.videomedia && (
             <div className='relative max-h-full'>
               <video
-                className='w-[100%] max-h-fit'
-                controls
+                className='-z-10 w-[100%] h-auto'
+                autoPlay
+                muted
+                loop
                 src={data.videomedia.url}
               >
-                <source type='video/.mp4' />
+                <source type='video/.mp4'/>
                 Your browser does not support the video tag.
               </video>
             </div>
           )}
-          <RichTextEditor data={data} />
         </>
       )}
-
-      <div className='relative px-6 lg:px-8'>
-        <div className='mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40'>
-          <div>
-            {data.bgtype === 'photo' && (
-              <>
-                {data.photo.asset._ref && (
-                  <Image
-                    src={urlFor(data.photo).url()}
-                    fill
-                    className='hero--bg -z-10'
-                    alt={data.photo.alt}
-                  />
-                )}
-                <RichTextEditor data={data} />
-                {data.active == true && (
-                  <h1 className='mb-5 text-4xl font-bold tracking-tight sm:text-6xl'>
-                    {data.title}
-                  </h1>
-                )}
-              </>
-            )}
-          </div>
-        </div>
-      </div>
+      {data.bgtype === 'photo' && (
+        <>
+          {data.photo.asset._ref && (
+            <Image
+              src={urlFor(data.photo).url()}
+              fill
+              className='-z-10 w-[100%] h-auto'
+              alt={data.photo.alt}
+            />
+          )}
+        </>
+      )}
+      {data.active == true && (
+        <h1 className='mb-5 text-4xl font-bold tracking-tight sm:text-6xl'>
+          {data.title}
+        </h1>
+      )}
+      <RichTextEditor data={data} />
     </div>
   )
 }

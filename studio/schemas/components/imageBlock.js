@@ -23,7 +23,11 @@ export default {
       fieldset: 'options',
       initialValue: true,
     },
-
+    {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+    },
     {
       title: 'Poster',
       name: 'poster',

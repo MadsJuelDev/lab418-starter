@@ -2,16 +2,34 @@ export default {
   name: 'gallery',
   title: 'Gallery',
   type: 'object',
+  groups: [
+    {
+      title: 'content',
+      name: 'content',
+    },
+    {
+      title: 'Settings',
+      name: 'settings',
+    },
+  ],
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Title',
+      group: "settings"
+    },
+    {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+      group: "settings"
     },
     {
       name: 'gallery',
       type: 'array',
       title: 'Gallery',
+      group: "content",
       of: [
         {
           type: 'object',

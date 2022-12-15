@@ -32,7 +32,7 @@ module.exports = {
         inherit: 'inherit',
       },
       gridTemplateColumns: {
-        // Simple 16 column grid
+        // Simple 12 column grid
         12: 'repeat(12, minmax(0, 1fr))',
       },
     },

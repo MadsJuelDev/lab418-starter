@@ -10,6 +10,7 @@ export async function getCustomPage(slug) {
   const componentQuery = `
     _type=="hero" => {
       ...,
+      videomedia{...,defined(asset) => asset->},
       content[]{...,markDefs[]{...,defined(intLink) => intLink->{"href":slug.current}}}
     },
       _type=="richtexteditor" => {

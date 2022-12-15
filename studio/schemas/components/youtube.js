@@ -28,6 +28,11 @@ export default {
   type: 'object',
   fields: [
     {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+    },
+    {
       title: 'YouTube video URL',
       description: 'https://youtu.be/jjyDfLPKmNk',
       name: 'url',

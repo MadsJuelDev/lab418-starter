@@ -4,11 +4,28 @@ export default {
   title: 'Content Grid',
   name: 'grid',
   type: 'object',
+  groups: [
+    {
+      title: 'content',
+      name: 'content',
+    },
+    {
+      title: 'Settings',
+      name: 'settings',
+    },
+  ],
   fields: [
+    {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+      group: "settings"
+    },
     {
       title: 'Grid Size',
       name: 'size',
       type: 'number',
+      group: "content",
       description:
         'Set the default number of column spaces available for this grid',
       options: {

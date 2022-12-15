@@ -4,7 +4,7 @@ export default {
   type: 'array',
   of: [
     {
-      title: 'External link',
+      title: 'Internal link',
       name: 'internalLink',
       type: 'object',
       fields: [

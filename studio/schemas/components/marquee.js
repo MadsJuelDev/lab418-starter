@@ -11,6 +11,11 @@ export default {
   ],
   fields: [
     {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+    },
+    {
       title: "Items",
       name: "items",
       type: "array",

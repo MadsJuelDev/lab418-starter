@@ -37,6 +37,12 @@ export default {
       group: 'settings',
     },
     {
+      title: "Custom Class",
+      name: "customClass",
+      type: "string",
+      group: "settings"
+    },
+    {
       title: 'Text Area',
       name: 'textarea',
       type: 'text',
