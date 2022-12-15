@@ -17,7 +17,6 @@ function Header() {
         <div className='hidden flex-wrap justify-between items-center mx-auto max-w-screen-xl lg:flex'>
           <Link
             href='/'
-            className='flex items-center'
           >
             <Image
               src='/logo-tea.png'
@@ -50,7 +49,7 @@ function Header() {
           >
             <Image
               src='/logo-tea.png'
-              className='mr-3 h-6 sm:h-9'
+              className='mr-3 h-6 w-auto sm:h-9'
               alt='Lab-418 Logo'
               width={50}
               height={50}
