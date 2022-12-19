@@ -8,7 +8,7 @@ const FeaturedContent = ({ data }) => {
       {/* image left */}
       {data.alternate == false && (
         <div className='relative px-6 lg:px-8'>
-          <div className='mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40'>
+          <div className='mx-auto max-w-3xl py-40 sm:py-20'>
             <div className='grid grid-cols-2'>
               {data.bgtype === 'photo' && (
                 <>
@@ -38,7 +38,7 @@ const FeaturedContent = ({ data }) => {
       {/* image right */}
       {data.alternate == true && (
         <div className='relative px-6 lg:px-8'>
-          <div className='mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40'>
+          <div className='mx-auto max-w-3xl py-40 sm:py-20'>
             <div className='grid grid-cols-2'>
               <div className='mx-auto my-auto'>
                 {data.active > 0 && (

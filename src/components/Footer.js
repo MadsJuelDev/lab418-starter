@@ -12,9 +12,9 @@ const Footer = () => {
     })
   }, [])
   return (
-    <div className='border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-800 text-white'>
+    <div className='customFooter'>
     {footer?.components?.map((component, index) => (
-      <Module
+      <Module 
         key={index}
         index={index}
         data={component}

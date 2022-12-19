@@ -13,11 +13,11 @@ const Gallery = ({ data }) => {
 
   return (
     <>
-      <div className='gallery mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
-        <h2 className='pb-4 text-xl font-bold'>{data.title}</h2>
-        <div className='gallery__grid grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'>
+      <div className='gallery'>
+        <h2 className='galleryTitle'>{data.title}</h2>
+        <div className='galleryGrid'>
           {data.gallery.map((item, index) => (
-            <div className='gallery__item' key={index}>
+            <div className='galleryItem' key={index}>
               {/* href={urlFor(item.image).url()} */}
               <a
                 type='button'
@@ -36,11 +36,11 @@ const Gallery = ({ data }) => {
                   alt={item.alt}
                   width={500}
                   height={500}
-                  className='duration-400 ease-in-out group-hover:opacity-75 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8'
+                  className='galleryImage'
                 />
               </a>
               {item.text && (
-                <div className='gallery__item__text'>
+                <div className='galleryItemText'>
                   <PortableText content={item.text} />
                 </div>
               )}

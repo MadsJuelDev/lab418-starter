@@ -1,62 +1,60 @@
-import { Marqy } from "marqy";
-import Image from "next/image";
-import Link from "next/link";
-import { urlFor } from "@/utils/sanityFetch/sanity";
+import { Marqy } from 'marqy'
+import Image from 'next/image'
+import Link from 'next/link'
+import { urlFor } from '@/utils/sanityFetch/sanity'
 
 const Marquee = ({ data }) => {
   const { items, speed, reverse, pausable } = data
-  if (!items?.length) return null;
+  if (!items?.length) return null
 
   return (
-    <div className="marquee-section whitespace-normal">
+    <div className='customMarquee marquee-section'>
       <Marqy
         speed={speed}
-        direction={reverse ? "right" : "left"}
+        direction={reverse ? 'right' : 'left'}
         pauseOnHover={pausable}
       >
-        <div className="flex">
+        <div className='customMarqueeContent'>
           {items.map((item, key) => {
             switch (item._type) {
-              case "simple":
+              case 'simple':
                 return (
-                  <span key={key} className="block p-32 text-48 leading-100">
+                  <span key={key}>
                     {item.text}
                   </span>
-                );
-              case "photo":
-                if (item.linkType == "external") {
+                )
+              case 'photo':
+                if (item.linkType == 'external') {
                   return (
                     <Link key={key} href={item.url}>
-                      <section className="block p-9 ">
-                        <Image
-                          src={urlFor(item.asset._ref).url()}
-                          width="100"
-                          height="100"
-                          alt={item.alt}
-                        />
-                      </section>
+                      <Image
+                        className='customMarqueeImage'
+                        src={urlFor(item.asset._ref).url()}
+                        width='250'
+                        height='250'
+                        alt={item.alt}
+                      />
                     </Link>
-                  );
-                } else if (item.linkType == "internal") {
+                  )
+                } else if (item.linkType == 'internal') {
                   return (
                     <Link key={key} href={item.slug}>
-                      <div className="block p-9 ">
-                        <Image
-                          src={urlFor(item.asset._ref).url()}
-                          width="100"
-                          height="100"
-                          alt={item.alt}
-                        />
-                      </div>
+                      <Image
+                        className='customMarqueeImage'
+                        src={urlFor(item.asset._ref).url()}
+                        width='250'
+                        height='250'
+                        alt={item.alt}
+                      />
                     </Link>
-                  );
+                  )
                 }
             }
           })}
         </div>
       </Marqy>
     </div>
-  );
-};
+  )
+}
 
-export default Marquee;
+export default Marquee

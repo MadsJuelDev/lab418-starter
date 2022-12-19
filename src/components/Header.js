@@ -12,25 +12,23 @@ function Header() {
     })
   }, [])
   return (
-    <header>
-      <nav className='border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-800 '>
-        <div className='hidden flex-wrap justify-between items-center mx-auto max-w-screen-xl lg:flex'>
+    <header className='customHeader'>
+      <nav>
+        <div className='customHeaderDesktop'>
           <Link href='/'>
             <Image
               src='/logo-tea.png'
-              className='mr-3 h-9'
               alt='Lab-418 Logo'
               width={50}
               height={100}
             />
           </Link>
-          <div className='items-center justify-between flex'>
-            <ul className='flex font-medium'>
+          <div className='customHeaderDesktopMenu'>
+            <ul>
               {header.navigation
                 ? header.navigation.map((navItem, index) => (
                     <li
                       key={index}
-                      className=' text-white focus:ring-4 font-medium rounded-lg px-5 py-2.5 mr-2 hover:bg-gray-700 focus:outline-none focus:ring-gray-800'
                     >
                       <Link href={navItem.slug.current}>{navItem.title}</Link>
                     </li>
@@ -40,15 +38,11 @@ function Header() {
           </div>
         </div>
         {/*---------------------Popover for mobile menu---------------*/}
-        <Popover className='flex flex-col lg:hidden'>
-          <div className='flex justify-between w-[100%] items-center mx-auto '>
-            <Link
-              href='/'
-              className='flex items-center'
-            >
+        <Popover className='customHeaderMobile'>
+          <div className='customHeaderMobileWrapper'>
+            <Link href='/'>
               <Image
                 src='/logo-tea.png'
-                className='mr-3 w-auto h-9'
                 alt='Lab-418 Logo'
                 width={50}
                 height={50}
@@ -56,8 +50,7 @@ function Header() {
             </Link>
             <Popover.Button>
               <svg
-                className='w-9 h-9'
-                fill='#ff867a'
+                className='customHeaderMobileMenuIcon'
                 viewBox='0 0 20 20'
                 xmlns='http://www.w3.org/2000/svg'
               >
@@ -69,14 +62,11 @@ function Header() {
               </svg>
             </Popover.Button>
           </div>
-          <Popover.Panel className='w-[100%] items-center h-fit flex flex-row-reverse'>
-            <ul className='flex flex-col mt-4 font-medium'>
+          <Popover.Panel className='customHeaderMobileMenu'>
+            <ul>
               {header.navigation
                 ? header.navigation.map((navItem, index) => (
-                    <li
-                      key={index}
-                      className='text-white text-right focus:ring-4 font-medium rounded-lg px-4 py-2 hover:bg-gray-700 focus:outline-none focus:ring-gray-800'
-                    >
+                    <li key={index}>
                       <Link href={navItem.slug.current}>{navItem.title}</Link>
                     </li>
                   ))

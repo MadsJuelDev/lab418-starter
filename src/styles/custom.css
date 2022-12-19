@@ -1,15 +1,205 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-p, h1, h2, h3, h4,a,button{
-    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.ctaTestClass{
-    div{
-        @apply bg-black;
+/*----------------------
+
+    Gallery
+
+----------------------*/
+
+.gallery {
+  @apply mx-auto max-w-2xl lg:max-w-7xl py-16 px-4 sm:py-24 sm:px-6;
+
+  &Title {
+    @apply pb-4 text-xl font-bold;
+  }
+  &Grid {
+    @apply grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8;
+  }
+  &Item {
+    @apply flex flex-col;
+  }
+  &Image {
+    @apply w-full rounded-lg bg-primary;
+    overflow: hidden;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    transition-property: opacity;
+
+    &:hover {
+      @apply opacity-75;
     }
+  }
+}
+
+/*----------------------
+
+   Hero
+
+----------------------*/
+
+.hero {
+  @apply w-[100%] h-[75vh] md:h-[100vh] relative;
+
+  &Image {
+    @apply object-cover -z-10 h-auto w-[100%];
+  }
+  &Video {
+    @apply object-cover -z-10 h-auto w-[100%];
+  }
+  &ContentWrapper {
+    @apply h-full w-full flex flex-col justify-center items-center;
+  }
+  &Title {
+    @apply text-center text-white text-2xl font-bold;
+  }
+  .richText {
+    @apply text-center text-white font-bold;
+
+    a {
+      @apply text-white underline;
+    }
+  }
+}
+
+/*----------------------
+
+    Grid
+
+----------------------*/
+
+.customGrid {
+  @apply relative;
+}
+
+/*----------------------
+
+   Featured content
+
+----------------------*/
+
+/*----------------------
+
+ Marquee
+
+----------------------*/
+
+.customMarquee {
+  @apply relative whitespace-normal;
+  &Content {
+    @apply flex gap-[120px] pr-[120px];
+  }
+  &Image {
+    @apply object-contain h-[100px] w-auto;
+  }
+  span {
+    @apply my-auto;
+  }
+}
+
+/*----------------------
+
+ YoutubeBlock
+
+----------------------*/
+
+.youtubeBlock {
+  @apply sm:w-[50vw] w-[90vw] mx-auto;
+
+  &Wrapper {
+    @apply relative pt-[56.25%] mx-auto overflow-hidden w-[100%];
+
+    iframe {
+      @apply absolute top-0 bottom-0 left-0 right-0 w-[100%] h-[100%];
+    }
+  }
+}
+
+/*----------------------
+
+ LinkList
+
+----------------------*/
+
+/*----------------------
+
+ CTA
+
+----------------------*/
+
+/*----------------------
+
+Header
+
+----------------------*/
+.customHeader {
+  nav {
+    @apply px-4 lg:px-6 py-2.5 bg-primary-dark;
+  }
+  &Desktop {
+    @apply hidden flex-wrap justify-between items-center mx-auto max-w-screen-xl lg:flex;
+
+    img {
+      @apply mr-3 h-9;
+    }
+
+    &Menu {
+      @apply items-center justify-between flex;
+      ul {
+        @apply flex font-medium;
+        li {
+          @apply px-5 py-2.5 mr-2;
+          a {
+            @apply text-primary-light;
+            &:hover {
+              @apply text-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &Mobile {
+    @apply flex flex-col lg:hidden;
+    &Wrapper {
+      @apply flex justify-between w-[100%] items-center mx-auto;
+      a {
+        @apply flex items-center;
+        img {
+          @apply mr-3 w-auto h-9;
+        }
+      }
+    }
+
+    &MenuIcon {
+      @apply w-9 h-9 fill-primary-light;
+    }
+
+    &Menu {
+      @apply w-[100%] items-center h-fit flex flex-row-reverse;
+
+      ul {
+        @apply flex flex-col mt-4 font-medium w-[100%];
+
+        li {
+          @apply text-right px-4 py-2;
+
+          a {
+            @apply text-primary-light;
+            &:hover {
+              @apply text-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*----------------------
+
+Footer
+
+----------------------*/
+
+.customFooter {
+  @apply px-4 lg:px-6 py-2.5 bg-primary-dark text-primary-light;
 }

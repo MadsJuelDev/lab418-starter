@@ -13,19 +13,19 @@ const Hero = ({ data }) => {
   // console.log(yturl)
 
   return (
-    <div className='h-[100vh]'>
+    <div className='hero'>
       {data.bgtype === 'video' && (
         <>
           {data.videomedia && (
             <div className='relative max-h-full'>
               <video
-                className='-z-10 w-[100%] h-auto'
+                className='heroVideo'
                 autoPlay
                 muted
                 loop
                 src={data.videomedia.url}
               >
-                <source type='video/.mp4'/>
+                <source type='video/.mp4' />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -38,18 +38,16 @@ const Hero = ({ data }) => {
             <Image
               src={urlFor(data.photo).url()}
               fill
-              className='-z-10 w-[100%] h-auto'
+              className='heroImage'
               alt={data.photo.alt}
             />
           )}
         </>
       )}
-      {data.active == true && (
-        <h1 className='mb-5 text-4xl font-bold tracking-tight sm:text-6xl'>
-          {data.title}
-        </h1>
-      )}
-      <RichTextEditor data={data} />
+      <div className="heroContentWrapper">
+        {data.active == true && <h1 className='heroTitle'>{data.title}</h1>}
+        <RichTextEditor data={data} />
+      </div>
     </div>
   )
 }
