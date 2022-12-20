@@ -1,7 +1,7 @@
 import { sanityClient } from './sanity'
 
 export async function getHeader() {
-  const query = `*[_type == "header"][0]{...,navigation[]->{slug, title}}`
+  const query = `*[_type == "header"][0]{...,navigation[]->{slug, menuTitle}}`
   const data = await sanityClient.fetch(query)
   return data
 }

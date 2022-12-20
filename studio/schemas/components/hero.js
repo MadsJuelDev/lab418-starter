@@ -142,10 +142,11 @@ export default {
       photo: "photo",
       content: "content.0.children",
       url: "url",
+      title: "title"
     },
-    prepare({ photo, content }) {
+    prepare({ photo, content, title }) {
       return {
-        title: "Hero",
+        title: "Hero: "+title,
         subtitle: content && content[0]?.text,
         media: photo,
       };

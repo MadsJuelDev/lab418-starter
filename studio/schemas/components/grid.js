@@ -60,11 +60,8 @@ export default {
       columns: 'columns',
     },
     prepare({ columns }) {
-      const name = getTypeTitles(columns.map((col) => col.blocks[0]._type))
-
       return {
-        title: `${columns.length} Column${columns.length > 1 ? 's' : ''}`,
-        subtitle: name,
+        title: `Grid: ${columns.length} Column${columns.length > 1 ? 's' : ''}`,
       }
     },
   },

@@ -34,7 +34,6 @@ import seoFields from './helpers/seoFields'
 import settings from './settings/settings'
 import imageBlock from './components/imageBlock.js'
 import buttonLinks from './components/buttonLinks.js'
-import cta from './components/cta.js'
 
 // Then we give our schema to the builder and provide the result to Sanity
 
@@ -64,7 +63,6 @@ export default createSchema({
     marquee,
     youtube,
     linkList,
-    cta,
     buttonLinks,
 
     // Objects

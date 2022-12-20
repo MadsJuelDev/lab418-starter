@@ -30,7 +30,7 @@ function Header() {
                     <li
                       key={index}
                     >
-                      <Link href={navItem.slug.current}>{navItem.title}</Link>
+                      <Link href={navItem.slug.current}>{navItem.menuTitle}</Link>
                     </li>
                   ))
                 : console.log('Error loading nav')}
@@ -67,7 +67,7 @@ function Header() {
               {header.navigation
                 ? header.navigation.map((navItem, index) => (
                     <li key={index}>
-                      <Link href={navItem.slug.current}>{navItem.title}</Link>
+                      <Link href={navItem.slug.current}>{navItem.menuTitle}</Link>
                     </li>
                   ))
                 : console.log('Error loading nav')}

@@ -52,13 +52,10 @@ export default {
     select: {
       title: 'title',
       poster: 'poster',
-      content: 'content.0.children',
-      url: 'url',
     },
-    prepare({ title, poster, content }) {
+    prepare({ title, poster }) {
       return {
-        title: title,
-        subtitle: content && content[0]?.text,
+        title: "Image: "+title,
         media: poster,
       }
     },

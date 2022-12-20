@@ -118,4 +118,18 @@ export default {
       },
     },
   ],
+  preview: {
+    select: {
+      photo: "photo",
+      content: "content.0.children",
+      title: "title"
+    },
+    prepare({ photo, content, title }) {
+      return {
+        title: "Featured: "+title,
+        subtitle: content && content[0]?.text,
+        media: photo,
+      };
+    },
+  },
 };

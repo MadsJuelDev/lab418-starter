@@ -54,5 +54,17 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+      gallery: "gallery"
+    },
+    prepare({ title, gallery }) {
+      return {
+        title: "Gallery: "+title,
+        subtitle: gallery.length + " images in gallery",
+      };
+    },
+  },
 }
-//
+

@@ -4,6 +4,11 @@ export default {
   type: 'object',
   fields: [
     {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
+    {
       title: "Custom Class",
       name: "customClass",
       type: "string",
@@ -69,4 +74,16 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      items: "items",
+      title: "title"
+    },
+    prepare({ items, title }) {
+      return {
+        title: "Link list: " + title,
+        subtitle: items.length + " links",
+      };
+    },
+  },
 }

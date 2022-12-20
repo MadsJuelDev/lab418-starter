@@ -11,9 +11,15 @@ export default {
   ],
   fields: [
     {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
+    {
       title: "Custom Class",
       name: "customClass",
       type: "string",
+      description: "*For developers* Add a custom class that can be targeted through CSS "
     },
     {
       title: "Items",
@@ -139,12 +145,13 @@ export default {
   ],
   preview: {
     select: {
-      text: "items.0.text",
+      items: "items",
+      title: "title"
     },
-    prepare({ text }) {
+    prepare({ items, title }) {
       return {
-        title: "Marquee",
-        subtitle: text,
+        title: "Marquee: " + title,
+        subtitle: items.length + " items in marquee",
       };
     },
   },
