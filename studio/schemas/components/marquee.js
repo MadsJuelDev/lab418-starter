@@ -1,108 +1,109 @@
 export default {
-  title: "Marquee",
-  name: "marquee",
-  type: "object",
+  title: 'Marquee',
+  name: 'marquee',
+  type: 'object',
   fieldsets: [
     {
-      title: "",
-      name: "options",
+      title: '',
+      name: 'options',
       options: { columns: 2 },
     },
   ],
   fields: [
     {
-      title: "Title",
-      name: "title",
-      type: "string",
+      title: 'Title',
+      name: 'title',
+      type: 'string',
     },
     {
-      title: "Custom Class",
-      name: "customClass",
-      type: "string",
-      description: "*For developers* Add a custom class that can be targeted through CSS "
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      description:
+        '*For developers* Add a custom class that can be targeted through CSS ',
     },
     {
-      title: "Items",
-      name: "items",
-      type: "array",
+      title: 'Items',
+      name: 'items',
+      type: 'array',
       of: [
         {
-          title: "Text",
-          name: "simple",
-          type: "object",
+          title: 'Text',
+          name: 'simple',
+          type: 'object',
           fields: [
             {
-              title: "Text",
-              name: "text",
-              type: "string",
+              title: 'Text',
+              name: 'text',
+              type: 'string',
               validation: (Rule) => Rule.required(),
             },
           ],
           preview: {
             select: {
-              text: "text",
+              text: 'text',
             },
             prepare({ text }) {
               return {
                 title: text,
-              };
+              }
             },
           },
         },
         {
-          title: "Image",
-          name: "photo",
-          type: "image",
+          title: 'Image',
+          name: 'photo',
+          type: 'image',
           options: {
             hotspot: true,
           },
           fields: [
             {
-              title: "Link Type",
-              name: "linkType",
-              type: "string",
+              title: 'Link Type',
+              name: 'linkType',
+              type: 'string',
               options: {
                 isHighlighted: true, // <-- make this field easily accessible
 
                 list: [
-                  { title: "Internal Page", value: "internal" },
-                  { title: "External URL", value: "external" },
+                  { title: 'Internal Page', value: 'internal' },
+                  { title: 'External URL', value: 'external' },
                 ],
               },
-              initialValue: "internal",
+              initialValue: 'internal',
               validation: (Rule) => Rule.required(),
             },
             {
-              title: "Internal Page",
-              name: "pages",
-              type: "reference",
+              title: 'Internal Page',
+              name: 'pages',
+              type: 'reference',
               options: {
                 isHighlighted: true, // <-- make this field easily accessible
               },
               to: [
-                { type: "pages" },
+                { type: 'pages' },
                 // { type: "product" },
               ],
-              hidden: ({ parent }) => parent.linkType !== "internal",
+              hidden: ({ parent }) => parent.linkType !== 'internal',
             },
             {
-              title: "External URL",
-              name: "url",
-              type: "url",
+              title: 'External URL',
+              name: 'url',
+              type: 'url',
               options: {
                 isHighlighted: true, // <-- make this field easily accessible
               },
               validation: (Rule) =>
                 Rule.uri({
-                  scheme: ["http", "https", "mailto", "tel"],
+                  scheme: ['http', 'https', 'mailto', 'tel'],
                 }),
-              hidden: ({ parent }) => parent.linkType !== "external",
+              hidden: ({ parent }) => parent.linkType !== 'external',
             },
             {
-              title: "Alternative text",
-              name: "alt",
-              type: "string",
-              description: "Important for SEO and accessiblity.",
+              title: 'Alternative text',
+              name: 'alt',
+              type: 'string',
+              description: 'Important for SEO and accessiblity.',
               options: {
                 isHighlighted: true, // <-- make this field easily accessible
               },
@@ -121,38 +122,38 @@ export default {
 
     // settings below, add as needed. - To be changed into tabs
     {
-      title: "Speed",
-      name: "speed",
-      type: "number",
-      description: "Pick a number between 0-1 (0.5 is the default)",
+      title: 'Speed',
+      name: 'speed',
+      type: 'number',
+      description: 'Pick a number between 0-1 (0.5 is the default)',
       initialValue: 0.5,
       validation: (Rule) => Rule.min(0).max(1).precision(1),
     },
     {
-      title: "Reverse direction?",
-      name: "reverse",
-      type: "boolean",
+      title: 'Reverse direction?',
+      name: 'reverse',
+      type: 'boolean',
       initialValue: false,
-      fieldset: "options",
+      fieldset: 'options',
     },
     {
-      title: "Pause on hover?",
-      name: "pausable",
-      type: "boolean",
+      title: 'Pause on hover?',
+      name: 'pausable',
+      type: 'boolean',
       initialValue: false,
-      fieldset: "options",
+      fieldset: 'options',
     },
   ],
   preview: {
     select: {
-      items: "items",
-      title: "title"
+      items: 'items',
+      title: 'title',
     },
     prepare({ items, title }) {
       return {
-        title: "Marquee: " + title,
-        subtitle: items.length + " items in marquee",
-      };
+        title: 'Marquee: ' + title,
+        subtitle: items.length + ' items in marquee',
+      }
     },
   },
-};
+}

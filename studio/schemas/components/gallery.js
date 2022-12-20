@@ -17,19 +17,21 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title',
-      group: "settings"
+      group: 'settings',
     },
     {
-      title: "Custom Class",
-      name: "customClass",
-      type: "string",
-      group: "settings"
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      group: 'settings',
+      description:
+        '*For developers* Add a custom class that can be targeted through CSS ',
     },
     {
       name: 'gallery',
       type: 'array',
       title: 'Gallery',
-      group: "content",
+      group: 'content',
       of: [
         {
           type: 'object',
@@ -56,15 +58,14 @@ export default {
   ],
   preview: {
     select: {
-      title: "title",
-      gallery: "gallery"
+      title: 'title',
+      gallery: 'gallery',
     },
     prepare({ title, gallery }) {
       return {
-        title: "Gallery: "+title,
-        subtitle: gallery.length + " images in gallery",
-      };
+        title: 'Gallery: ' + title,
+        subtitle: gallery.length + ' images in gallery',
+      }
     },
   },
 }
-

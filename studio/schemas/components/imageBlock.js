@@ -24,9 +24,11 @@ export default {
       initialValue: true,
     },
     {
-      title: "Custom Class",
-      name: "customClass",
-      type: "string",
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      description:
+        '*For developers* Add a custom class that can be targeted through CSS ',
     },
     {
       title: 'Poster',
@@ -55,7 +57,7 @@ export default {
     },
     prepare({ title, poster }) {
       return {
-        title: "Image: "+title,
+        title: 'Image: ' + title,
         media: poster,
       }
     },
