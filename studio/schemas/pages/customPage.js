@@ -45,6 +45,7 @@ export default {
         { type: 'youtube' },
         { type: 'linkList' },
         { type: 'cta' },
+        { type: 'settings' },
         // {
         //   title: 'Reusable Section',
         //   type: 'reference',
