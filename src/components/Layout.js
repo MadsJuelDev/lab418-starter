@@ -60,7 +60,7 @@ const Layout = ({ children, data }) => {
             onSetup={({ height }) => setHeaderHeight(height)}
           />{' '}
           <main
-            className=''
+            className='min-h-screen'
             id='content'
           >
             {children}

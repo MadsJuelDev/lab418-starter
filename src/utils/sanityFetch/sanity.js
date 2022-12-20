@@ -4,7 +4,7 @@ import createImageUrlBuilder from '@sanity/image-url'
 const sanityId = 'guc44bdp'
 
 const config = {
-  dataset: 'production',
+  dataset: 'patrick',
   projectId: sanityId,
   apiVersion: '2022-11-17',
   useCdn: false,
