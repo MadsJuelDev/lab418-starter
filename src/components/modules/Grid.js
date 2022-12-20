@@ -4,6 +4,7 @@ import cx from 'classnames'
 // import ProductCard from '@components/product-card'
 import RichTextEditor from './RichTextEditor'
 import Gallery from './Gallery'
+import SiteSettings from './SiteSettings'
 
 const Grid = ({ data = {} }) => {
   const { size, columns } = data
@@ -37,7 +38,7 @@ const Grid = ({ data = {} }) => {
 
   return (
     <div className={`customGrid ${data.customClass}`}>
-    {/* <section className='relative px-16 py-48 sm:p-32 md:py-64 lg:py-80 '> */}
+      {/* <section className='relative px-16 py-48 sm:p-32 md:py-64 lg:py-80 '> */}
       <div className='mx-auto'>
         <div className={`grid grid-cols-${size} gap-x-4 gap-y-12 `}>
           {columns.map((col, key) => {
@@ -59,7 +60,10 @@ const Grid = ({ data = {} }) => {
                 )}
               >
                 {blocks.map((block, key) => (
-                  <GridBlock key={key} block={block} />
+                  <GridBlock
+                    key={key}
+                    block={block}
+                  />
                 ))}
               </div>
             )
@@ -78,6 +82,8 @@ const GridBlock = ({ block }) => {
       return <RichTextEditor data={block} />
     case 'gallery':
       return <Gallery data={block} />
+    case 'settings':
+      return <SiteSettings data={block} />
     default:
       return null
   }

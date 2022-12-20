@@ -9,12 +9,9 @@ import YoutubeBlock from './YoutubeBlock'
 import LinkList from './LinkList'
 import ImageBlock from './ImageBlock'
 import ErrorBlock from '../ErrorBlock'
-import siteConfig from './siteConfig'
+import SiteSettings from './SiteSettings'
 
-export const Module = ({
-  index,
-  data,
-}) => {
+export const Module = ({ index, data }) => {
   const ModuleType = {
     hero: Hero,
     RichTextEditor: RichTextEditor,
@@ -25,7 +22,7 @@ export const Module = ({
     youtube: YoutubeBlock,
     linkList: LinkList,
     imageBlock: ImageBlock,
-    settings: siteConfig,
+    settings: SiteSettings,
   }[data?._type] ?? <ErrorBlock errorData='Error loading module' />
   return (
     <ModuleType

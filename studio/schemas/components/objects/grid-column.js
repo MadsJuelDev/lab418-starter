@@ -28,6 +28,7 @@ export default {
         { type: 'richtexteditor' },
         { type: 'gallery' },
         { type: 'linkList' },
+        { type: 'settings' },
       ],
     },
   ],

@@ -1,25 +1,7 @@
-/*
-Comments
-Needs to be added. 
-Site settings:
-Firmanavn
-adresse
-cvr
-email
-mobil
-
-socialemedier fb,insta
-*/
-
 export default {
-  title: 'Site Settings',
+  title: 'Site settings',
   name: 'siteConfig',
   type: 'object',
-  groups: [
-    { title: 'General', name: 'general', default: true },
-    { title: 'Styling', name: 'styling' },
-    { title: 'Seo', name: 'seo' },
-  ],
   fieldsets: [
     {
       title: '',
@@ -47,7 +29,7 @@ export default {
       validation: (Rule) =>
         Rule.min(8)
           .max(8)
-          .error(`A CVR number cannot be more or less than 8 characters.`),
+          .warning(`A CVR number cannot be more or less than 8 characters.`),
     },
     {
       title: 'Address',
@@ -104,12 +86,6 @@ export default {
       name: 'facebook',
       type: 'string',
       fieldset: 'SoMe',
-    },
-    {
-      title: 'Custom Class',
-      name: 'customClass',
-      type: 'string',
-      group: 'settings',
     },
   ],
 }

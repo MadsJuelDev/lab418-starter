@@ -12,8 +12,8 @@ socialemedier fb,insta
 */
 
 export default {
-  name: 'settings',
   title: 'Settings',
+  name: 'settings',
   type: 'object',
   groups: [
     { title: 'General', name: 'general', default: true },

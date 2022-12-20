@@ -44,6 +44,9 @@ export async function getCustomPage(slug) {
           intLink -> {"slug":slug.current}
         }
       }
+     },
+     _type=="settings" => {
+      ...
      }
     `
   const query = `*[_type == "pages" && slug.current == "${slug}"][0]{...,components[]{

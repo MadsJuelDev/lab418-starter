@@ -5,9 +5,9 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // pages
-import customPage from "./pages/customPage.js";
-import header from "./pages/header";
-import footer from './pages/footer';
+import customPage from './pages/customPage.js'
+import header from './pages/header'
+import footer from './pages/footer'
 
 //components
 import hero from './components/hero'
@@ -47,7 +47,7 @@ export default createSchema({
     customPage,
     header,
     footer,
-    
+
     // helpers
     textAlignment,
     seoFields,
