@@ -118,11 +118,19 @@
 
 ----------------------*/
 
+.linkList{
+    @apply flex flex-col gap-3 relative
+}
+
 /*----------------------
 
- CTA
+Image block
 
 ----------------------*/
+
+.imageBlock{
+    @apply h-[75vh] relative max-h-[100vh];
+}
 
 /*----------------------
 

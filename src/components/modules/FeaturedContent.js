@@ -4,7 +4,7 @@ import RichTextEditor from './RichTextEditor'
 
 const FeaturedContent = ({ data }) => {
   return (
-    <div>
+    <div className={data.cutsomclass}>
       {/* image left */}
       {data.alternate == false && (
         <div className='relative px-6 lg:px-8'>

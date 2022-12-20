@@ -6,14 +6,8 @@ import Link from 'next/link'
 import RichTextEditor from './RichTextEditor'
 
 const Hero = ({ data }) => {
-  console.log(data)
-
-  // const id = getYouTubeId(data.bgtype == 'video' && data.youtube.url)
-  // const yturl = `https://www.youtube.com/embed/${id}`
-  // console.log(yturl)
-
   return (
-    <div className='hero'>
+    <div className={`hero ${data.customClass}`}>
       {data.bgtype === 'video' && (
         <>
           {data.videomedia && (

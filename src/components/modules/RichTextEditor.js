@@ -2,7 +2,7 @@ import PortableText from 'react-portable-text'
 
 const RichTextEditor = ({ data }) => {
   return (
-    <div>
+    <div className={data.customClass}>
       <PortableText
         className="richText"
         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}

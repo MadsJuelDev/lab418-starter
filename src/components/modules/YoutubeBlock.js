@@ -7,7 +7,7 @@ const YoutubeBlock = ({ data }) => {
   const yturl = `https://www.youtube-nocookie.com/embed/${id}`
 
   return (
-    <div className='youtubeBlock'>
+    <div className={`youtubeBlock ${data.customClass}`}>
       <div className='youtubeBlockWrapper'>
         <iframe title='Youtube Preview' src={yturl} />
       </div>

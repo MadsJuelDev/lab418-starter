@@ -13,7 +13,7 @@ const Gallery = ({ data }) => {
 
   return (
     <>
-      <div className='gallery'>
+      <div className={`gallery ${data.customClass}`}>
         <h2 className='galleryTitle'>{data.title}</h2>
         <div className='galleryGrid'>
           {data.gallery.map((item, index) => (

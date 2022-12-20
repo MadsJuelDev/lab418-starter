@@ -8,7 +8,7 @@ const Marquee = ({ data }) => {
   if (!items?.length) return null
 
   return (
-    <div className='customMarquee marquee-section'>
+    <div className={`customMarquee marquee-section ${data.customClass}`}>
       <Marqy
         speed={speed}
         direction={reverse ? 'right' : 'left'}
