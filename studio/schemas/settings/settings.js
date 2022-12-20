@@ -23,7 +23,32 @@ export default {
   fieldsets: [
     {
       title: '',
-      name: 'contact',
+      name: 'showCompany',
+      options: { columns: 2 },
+    },
+    {
+      title: '',
+      name: 'showCVR',
+      options: { columns: 2 },
+    },
+    {
+      title: '',
+      name: 'showAddress',
+      options: { columns: 2 },
+    },
+    {
+      title: '',
+      name: 'showPostal',
+      options: { columns: 2 },
+    },
+    {
+      title: '',
+      name: 'showEmail',
+      options: { columns: 2 },
+    },
+    {
+      title: '',
+      name: 'showPhone',
       options: { columns: 2 },
     },
     {
@@ -49,29 +74,50 @@ export default {
       title: 'Company name',
       name: 'companyName',
       type: 'string',
-      fieldset: 'contact',
+      fieldset: 'showCompany',
+    },
+    {
+      title: 'Show Company name?',
+      name: 'activeCompany',
+      type: 'boolean',
+      initialValue: true,
+      fieldset: 'showCompany',
     },
     {
       title: 'CVR',
       name: 'cvr',
       type: 'string',
-      fieldset: 'contact',
+      fieldset: 'showCVR',
       validation: (Rule) =>
         Rule.min(8)
           .max(8)
           .warning(`A CVR number cannot be more or less than 8 characters.`),
     },
     {
+      title: 'Show CVR?',
+      name: 'activeCVR',
+      type: 'boolean',
+      initialValue: true,
+      fieldset: 'showCVR',
+    },
+    {
       title: 'Address',
       name: 'address',
       type: 'string',
-      fieldset: 'contact',
+      fieldset: 'showAddress',
+    },
+    {
+      title: 'Show Address?',
+      name: 'activeAdress',
+      type: 'boolean',
+      initialValue: true,
+      fieldset: 'showAddress',
     },
     {
       title: 'Postal Code',
       name: 'postalCode',
       type: 'string',
-      fieldset: 'contact',
+      fieldset: 'showPostal',
       validation: (Rule) =>
         Rule.min(4)
           .error('Postal codes must have a minimum of 4 characters')
@@ -79,18 +125,32 @@ export default {
           .error('Postal codes have a maximum of 4 characters'),
     },
     {
+      title: 'Show Postal?',
+      name: 'activePostal',
+      type: 'boolean',
+      initialValue: true,
+      fieldset: 'showPostal',
+    },
+    {
       title: 'Email',
       name: 'email',
       type: 'string',
-      fieldset: 'contact',
+      fieldset: 'showEmail',
       validation: (Rule) => Rule.email(),
+    },
+    {
+      title: 'Show Email?',
+      name: 'activeEmail',
+      type: 'boolean',
+      initialValue: true,
+      fieldset: 'showEmail',
     },
     {
       title: 'Phone',
       name: 'phone',
       type: 'string',
       description: 'International phone number ex. +45 xx xx xx xx',
-      fieldset: 'contact',
+      fieldset: 'showPhone',
       validation: (Rule) =>
         Rule.custom((phone) => {
           if (typeof phone === 'undefined') {
@@ -104,6 +164,13 @@ export default {
             return 'Not a valid international phone number' // Error message goes here
           }
         }),
+    },
+    {
+      title: 'Show phone number?',
+      name: 'activePhone',
+      type: 'boolean',
+      initialValue: true,
+      fieldset: 'showPhone',
     },
     {
       title: 'Instagram',
