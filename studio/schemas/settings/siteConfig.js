@@ -12,8 +12,8 @@ socialemedier fb,insta
 */
 
 export default {
-  name: 'settings',
-  title: 'Settings',
+  title: 'Site Settings',
+  name: 'siteConfig',
   type: 'object',
   groups: [
     { title: 'General', name: 'general', default: true },
@@ -34,18 +34,6 @@ export default {
   ],
   fields: [
     {
-      name: 'seoLocale',
-      title: 'Seo Locale',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Danish', value: 'da-DK' },
-          { title: 'English GB', value: 'en-GB' },
-          { title: 'English US', value: 'en-US' },
-        ],
-      },
-    },
-    {
       title: 'Company name',
       name: 'companyName',
       type: 'string',
@@ -59,7 +47,7 @@ export default {
       validation: (Rule) =>
         Rule.min(8)
           .max(8)
-          .warning(`A CVR number cannot be more or less than 8 characters.`),
+          .error(`A CVR number cannot be more or less than 8 characters.`),
     },
     {
       title: 'Address',
@@ -116,6 +104,12 @@ export default {
       name: 'facebook',
       type: 'string',
       fieldset: 'SoMe',
+    },
+    {
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      group: 'settings',
     },
   ],
 }
