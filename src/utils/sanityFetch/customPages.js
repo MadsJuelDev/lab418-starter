@@ -45,9 +45,6 @@ export async function getCustomPage(slug) {
         }
       }
      },
-     _type=="settings" => {
-      ...
-     }
     `
   const query = `*[_type == "pages" && slug.current == "${slug}"][0]{...,components[]{
     _type=="grid" => {

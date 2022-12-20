@@ -18,16 +18,14 @@ import grid from './components/grid'
 import featuredContent from './components/featuredContent.js'
 import marquee from './components/marquee.js'
 import linkList from './components/linkList.js'
+import youtube from './components/youtube.js'
+import siteConfig from './components/siteConfig.js'
 
 // Objects
 import gridColumn from './components/objects/grid-column'
 import gridSize from './components/objects/grid-size'
 
 //helpers
-
-import textAlignment from './helpers/textAlignment.js'
-import youtube from './components/youtube.js'
-
 import seoFields from './helpers/seoFields'
 
 //Settings
@@ -49,7 +47,6 @@ export default createSchema({
     footer,
 
     // helpers
-    textAlignment,
     seoFields,
 
     //components
@@ -64,7 +61,7 @@ export default createSchema({
     youtube,
     linkList,
     buttonLinks,
-
+    siteConfig,
     // Objects
     gridColumn,
     gridSize,

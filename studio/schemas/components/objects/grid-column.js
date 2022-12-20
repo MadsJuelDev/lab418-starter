@@ -29,6 +29,7 @@ export default {
         { type: 'gallery' },
         { type: 'linkList' },
         { type: 'settings' },
+        { type: 'siteConfig' },
       ],
     },
   ],

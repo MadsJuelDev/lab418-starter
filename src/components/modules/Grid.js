@@ -5,6 +5,7 @@ import cx from 'classnames'
 import RichTextEditor from './RichTextEditor'
 import Gallery from './Gallery'
 import SiteSettings from './SiteSettings'
+import SiteConfig from './SiteConfig'
 
 const Grid = ({ data = {} }) => {
   const { size, columns } = data
@@ -84,6 +85,8 @@ const GridBlock = ({ block }) => {
       return <Gallery data={block} />
     case 'settings':
       return <SiteSettings data={block} />
+    case 'siteConfig':
+      return <SiteConfig data={block} />
     default:
       return null
   }

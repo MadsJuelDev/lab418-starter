@@ -10,6 +10,7 @@ import LinkList from './LinkList'
 import ImageBlock from './ImageBlock'
 import ErrorBlock from '../ErrorBlock'
 import SiteSettings from './SiteSettings'
+import SiteConfig from './SiteConfig'
 
 export const Module = ({ index, data }) => {
   const ModuleType = {
@@ -23,6 +24,7 @@ export const Module = ({ index, data }) => {
     linkList: LinkList,
     imageBlock: ImageBlock,
     settings: SiteSettings,
+    siteConfig: SiteConfig,
   }[data?._type] ?? <ErrorBlock errorData='Error loading module' />
   return (
     <ModuleType
