@@ -16,16 +16,18 @@ export default {
   ],
   fields: [
     {
-      title: "Custom Class",
-      name: "customClass",
-      type: "string",
-      group: "settings"
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      group: 'settings',
+      description:
+        '*For developers* Add a custom class that can be targeted through CSS ',
     },
     {
       title: 'Grid Size',
       name: 'size',
       type: 'number',
-      group: "content",
+      group: 'content',
       description:
         'Set the default number of column spaces available for this grid',
       options: {

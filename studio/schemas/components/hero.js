@@ -22,84 +22,86 @@
 // }
 
 export default {
-  name: "hero",
-  title: "Hero",
-  type: "object",
+  name: 'hero',
+  title: 'Hero',
+  type: 'object',
   groups: [
     {
-      name: "media",
-      title: "Media",
+      name: 'media',
+      title: 'Media',
     },
     {
-      name: "settings",
-      title: "Settings",
+      name: 'settings',
+      title: 'Settings',
     },
   ],
   fieldsets: [
     {
-      title: "",
-      name: "options",
+      title: '',
+      name: 'options',
       options: { columns: 2 },
     },
   ],
   fields: [
     {
-      title: "Title",
-      name: "title",
-      type: "string",
-      fieldset: "options",
-      group: "settings",
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      fieldset: 'options',
+      group: 'settings',
     },
     {
-      title: "Show title?",
-      name: "active",
-      type: "boolean",
+      title: 'Show title?',
+      name: 'active',
+      type: 'boolean',
       initialValue: true,
 
-      fieldset: "options",
-      group: "settings",
+      fieldset: 'options',
+      group: 'settings',
     },
     {
-      title: "Custom Class",
-      name: "customClass",
-      type: "string",
-      group: "settings"
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      group: 'settings',
+      description:
+        '*For developers* Add a custom class that can be targeted through CSS ',
     },
     {
-      title: "Content",
-      name: "content",
-      type: "blockContent",
+      title: 'Content',
+      name: 'content',
+      type: 'blockContent',
     },
     {
-      title: "Background type",
-      name: "bgtype",
-      type: "string",
-      group: "media",
+      title: 'Background type',
+      name: 'bgtype',
+      type: 'string',
+      group: 'media',
       options: {
         list: [
-          { title: "Photo", value: "photo" },
-          { title: "Video", value: "video" },
+          { title: 'Photo', value: 'photo' },
+          { title: 'Video', value: 'video' },
         ],
       },
       // validation: (Rule) => Rule.required(),
     },
     {
-      title: "Poster",
-      name: "photo",
-      type: "image",
-      group: "media",
+      title: 'Poster',
+      name: 'photo',
+      type: 'image',
+      group: 'media',
       options: {
         hotspot: true, // <-- Defaults to false
       },
       hidden: ({ parent }) => {
-        return parent.bgtype !== "photo";
+        return parent.bgtype !== 'photo'
       },
       fields: [
         {
-          title: "Alternative text",
-          name: "alt",
-          type: "string",
-          description: "Important for SEO and accessiblity.",
+          title: 'Alternative text',
+          name: 'alt',
+          type: 'string',
+          description: 'Important for SEO and accessiblity.',
           options: {
             isHighlighted: true, // <-- make this field easily accessible
           },
@@ -107,15 +109,15 @@ export default {
       ],
     },
     {
-      title: "Video Title",
-      name: "videomedia",
-      type: "file",
-      description: "upload a video file (.mp4)",
+      title: 'Video Title',
+      name: 'videomedia',
+      type: 'file',
+      description: 'upload a video file (.mp4)',
       options: {
-        accept: "video/*",
+        accept: 'video/*',
       },
       hidden: ({ parent }) => {
-        return parent.bgtype !== "video";
+        return parent.bgtype !== 'video'
       },
     },
     // {
@@ -139,17 +141,17 @@ export default {
 
   preview: {
     select: {
-      photo: "photo",
-      content: "content.0.children",
-      url: "url",
-      title: "title"
+      photo: 'photo',
+      content: 'content.0.children',
+      url: 'url',
+      title: 'title',
     },
     prepare({ photo, content, title }) {
       return {
-        title: "Hero: "+title,
+        title: 'Hero: ' + title,
         subtitle: content && content[0]?.text,
         media: photo,
-      };
+      }
     },
   },
-};
+}

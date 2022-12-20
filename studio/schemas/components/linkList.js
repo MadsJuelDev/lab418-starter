@@ -4,14 +4,15 @@ export default {
   type: 'object',
   fields: [
     {
-      title: "Title",
-      name: "title",
-      type: "string",
+      title: 'Title',
+      name: 'title',
+      type: 'string',
     },
     {
-      title: "Custom Class",
-      name: "customClass",
-      type: "string",
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      description: '*For developers* Add a custom class that can be targeted through CSS ',
     },
     {
       name: 'items',
@@ -76,14 +77,14 @@ export default {
   ],
   preview: {
     select: {
-      items: "items",
-      title: "title"
+      items: 'items',
+      title: 'title',
     },
     prepare({ items, title }) {
       return {
-        title: "Link list: " + title,
-        subtitle: items.length + " links",
-      };
+        title: 'Link list: ' + title,
+        subtitle: items.length + ' links',
+      }
     },
   },
 }
