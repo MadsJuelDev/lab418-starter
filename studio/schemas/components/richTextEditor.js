@@ -1,6 +1,6 @@
 export default {
   name: 'richtexteditor',
-  title: 'RichTextEditor',
+  title: 'Rich Text Editor',
   type: 'object',
   fields: [
     {

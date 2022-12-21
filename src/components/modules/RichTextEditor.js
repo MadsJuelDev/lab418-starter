@@ -1,6 +1,6 @@
 import PortableText from 'react-portable-text'
 
-const RichTextEditor = ({ data }) => {
+const RichTextEditor = ({ index, data  }) => {
   return (
     <div className={data.customClass}>
       {data.content && (

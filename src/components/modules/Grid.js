@@ -1,11 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-// import ProductCard from '@components/product-card'
-import RichTextEditor from './RichTextEditor'
-import Gallery from './Gallery'
-import SiteSettings from './SiteSettings'
-import SiteConfig from './SiteConfig'
+import { Module } from '../modules'
 
 const Grid = ({ data = {} }) => {
   const { size, columns } = data
@@ -39,12 +35,10 @@ const Grid = ({ data = {} }) => {
 
   return (
     <div className={`customGrid ${data.customClass}`}>
-      {/* <section className='relative px-16 py-48 sm:p-32 md:py-64 lg:py-80 '> */}
       <div className='mx-auto'>
         <div className={`grid grid-cols-${size} gap-x-4 gap-y-12 `}>
           {columns.map((col, key) => {
             const { sizes, blocks } = col
-
             return (
               <div
                 key={key}
@@ -60,10 +54,10 @@ const Grid = ({ data = {} }) => {
                   )
                 )}
               >
-                {blocks.map((block, key) => (
-                  <GridBlock
+                {blocks?.map((data, key) => (
+                  <Module
                     key={key}
-                    block={block}
+                    data={data}
                   />
                 ))}
               </div>
@@ -75,21 +69,5 @@ const Grid = ({ data = {} }) => {
   )
 }
 
-const GridBlock = ({ block }) => {
-  const type = block._type
-
-  switch (type) {
-    case 'richtexteditor':
-      return <RichTextEditor data={block} />
-    case 'gallery':
-      return <Gallery data={block} />
-    case 'settings':
-      return <SiteSettings data={block} />
-    case 'siteConfig':
-      return <SiteConfig data={block} />
-    default:
-      return null
-  }
-}
 
 export default Grid

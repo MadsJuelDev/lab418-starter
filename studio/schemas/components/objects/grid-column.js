@@ -3,6 +3,7 @@ import React from 'react'
 import { Avatar } from '@sanity/ui'
 
 import { getTypeTitles } from '../../../lib/helpers'
+import imageBlock from '../imageBlock'
 
 export default {
   title: 'Column',
@@ -26,10 +27,11 @@ export default {
       description: 'The content that exists inside this column',
       of: [
         { type: 'richtexteditor' },
-        { type: 'gallery' },
         { type: 'linkList' },
         { type: 'settings' },
         { type: 'siteConfig' },
+        { type: 'imageBlock' },
+        { type: 'youtube'}
       ],
     },
   ],

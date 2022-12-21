@@ -15,7 +15,7 @@ import SiteConfig from './SiteConfig'
 export const Module = ({ index, data }) => {
   const ModuleType = {
     hero: Hero,
-    RichTextEditor: RichTextEditor,
+    richtexteditor: RichTextEditor,
     grid: Grid,
     featuredContent: FeaturedContent,
     marquee: Marquee,
@@ -25,7 +25,10 @@ export const Module = ({ index, data }) => {
     imageBlock: ImageBlock,
     settings: SiteSettings,
     siteConfig: SiteConfig,
-  }[data?._type] ?? <ErrorBlock errorData='Error loading module' />
+  }[data?._type] ?? {data: null, index: null}
+
+  if(ModuleType.data === null) return <ErrorBlock errorData="Error loading module"/>
+  
   return (
     <ModuleType
       index={index}
