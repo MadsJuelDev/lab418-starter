@@ -16,6 +16,11 @@ export default {
   ],
   fields: [
     {
+      title:'Title',
+      name: 'title',
+      type:'string'
+    },
+    {
       title: 'Custom Class',
       name: 'customClass',
       type: 'string',
@@ -72,4 +77,14 @@ export default {
       fieldset: 'SoMe',
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({ title }) {
+      return {
+        title: 'Company Info: ' + title,
+      }
+    },
+  },
 }
