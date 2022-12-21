@@ -4,8 +4,7 @@ import cx from 'classnames'
 // import ProductCard from '@components/product-card'
 import RichTextEditor from './RichTextEditor'
 import Gallery from './Gallery'
-import SiteSettings from './SiteSettings'
-import SiteConfig from './SiteConfig'
+import CompanyInfo from './CompanyInfo'
 
 const Grid = ({ data = {} }) => {
   const { size, columns } = data
@@ -83,10 +82,8 @@ const GridBlock = ({ block }) => {
       return <RichTextEditor data={block} />
     case 'gallery':
       return <Gallery data={block} />
-    case 'settings':
-      return <SiteSettings data={block} />
-    case 'siteConfig':
-      return <SiteConfig data={block} />
+    case 'companyInfo':
+      return <CompanyInfo data={block} />
     default:
       return null
   }

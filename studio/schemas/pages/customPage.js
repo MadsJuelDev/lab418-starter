@@ -7,7 +7,7 @@ export default {
     { title: 'Settings', name: 'settings' },
     { title: 'Seo Settings', name: 'seoSettings' },
   ],
-  
+
   fields: [
     {
       name: 'title',
@@ -24,7 +24,7 @@ export default {
       options: {
         source: 'title',
       },
-      hidden: ({document}) => document?.slug?.current == "frontPage"
+      hidden: ({ document }) => document?.slug?.current == 'frontPage',
     },
     {
       name: 'menuTitle',
@@ -46,7 +46,7 @@ export default {
         { type: 'gallery' },
         { type: 'youtube' },
         { type: 'linkList' },
-        { type: 'settings' },
+        { type: 'companyInfo' },
         // {
         //   title: 'Reusable Section',
         //   type: 'reference',

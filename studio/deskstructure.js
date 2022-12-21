@@ -20,8 +20,8 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
-        .title('Settings')
-        .child(S.document().schemaType('settings').documentId('settings'))
+        .title('Site Config')
+        .child(S.document().schemaType('siteConfig').documentId('siteConfig'))
         .icon(() => '📐'),
       S.listItem()
         .title('Header')

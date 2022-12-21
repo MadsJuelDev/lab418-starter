@@ -19,7 +19,7 @@ import featuredContent from './components/featuredContent.js'
 import marquee from './components/marquee.js'
 import linkList from './components/linkList.js'
 import youtube from './components/youtube.js'
-import siteConfig from './components/siteConfig.js'
+import companyInfo from './components/companyInfo.js'
 
 // Objects
 import gridColumn from './components/objects/grid-column'
@@ -29,9 +29,9 @@ import gridSize from './components/objects/grid-size'
 import seoFields from './helpers/seoFields'
 
 //Settings
-import settings from './settings/settings'
 import imageBlock from './components/imageBlock.js'
 import buttonLinks from './components/buttonLinks.js'
+import siteConfig from './settings/siteConfig'
 
 // Then we give our schema to the builder and provide the result to Sanity
 
@@ -61,12 +61,12 @@ export default createSchema({
     youtube,
     linkList,
     buttonLinks,
-    siteConfig,
+    companyInfo,
     // Objects
     gridColumn,
     gridSize,
 
     // Settings
-    settings,
+    siteConfig,
   ]),
 })

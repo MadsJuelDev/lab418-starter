@@ -15,7 +15,7 @@ export default {
         { type: 'marquee' },
         { type: 'gallery' },
         { type: 'linkList' },
-        { type: 'settings' },
+        { type: 'companyInfo' },
       ],
     },
   ],

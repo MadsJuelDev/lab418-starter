@@ -9,8 +9,7 @@ import YoutubeBlock from './YoutubeBlock'
 import LinkList from './LinkList'
 import ImageBlock from './ImageBlock'
 import ErrorBlock from '../ErrorBlock'
-import SiteSettings from './SiteSettings'
-import SiteConfig from './SiteConfig'
+import CompanyInfo from './CompanyInfo'
 
 export const Module = ({ index, data }) => {
   const ModuleType = {
@@ -23,8 +22,7 @@ export const Module = ({ index, data }) => {
     youtube: YoutubeBlock,
     linkList: LinkList,
     imageBlock: ImageBlock,
-    settings: SiteSettings,
-    siteConfig: SiteConfig,
+    companyInfo: CompanyInfo,
   }[data?._type] ?? <ErrorBlock errorData='Error loading module' />
   return (
     <ModuleType
