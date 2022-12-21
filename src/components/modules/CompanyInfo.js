@@ -1,16 +1,14 @@
-import { getCompanyInfo } from '@/utils/sanityFetch/getCompanyInfo'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { getSiteConfig } from '@/utils/sanityFetch/getSiteConfig'
+import { useEffect,useState } from 'react'
 
 const CompanyInfo = ({ data }) => {
-  const [info, setInfo] = useState()
+  const [info, setInfo] = useState(0)
 
   useEffect(() => {
-    getCompanyInfo().then((data) => {
+    getSiteConfig().then((data) => {
       setInfo(data)
     })
   }, [])
-
   return (
     <div className={data.customClass}>
       <ul>
@@ -33,8 +31,8 @@ const CompanyInfo = ({ data }) => {
             <a href={`tel:${info.phone}`}>{info.phone}</a>
           </li>
         )}
-        {data.facebook && <li>{info.facebook}</li>}
-        {data.instagram && <li>{info.instagram}</li>}
+        {data.facebook && <li><a href={info.facebook} target="_blank">Facebook</a></li>}
+        {data.instagram && <li><a href={info.instagram} target="_blank">Instagram</a></li>}
       </ul>
     </div>
   )

@@ -35,16 +35,10 @@ export async function getCustomPage(slug) {
     _type=="linkList" => {
         ...,
         items[]{...,defined(pages) => pages->{"slug":slug.current}}
-     },
-     _type=="cta" => {
-      ...,
-      buttons[]{
-        ...,
-        defined(intLink) => {
-          intLink -> {"slug":slug.current}
-        }
-      }
-     },
+    },
+    _type=="companyInfo" => {
+      ...
+    },
     `
   const query = `*[_type == "pages" && slug.current == "${slug}"][0]{...,components[]{
     _type=="grid" => {

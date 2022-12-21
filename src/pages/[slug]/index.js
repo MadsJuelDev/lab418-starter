@@ -2,7 +2,6 @@ import { getCustomPage, getAllSlugs } from '@/sanityFetch/customPages'
 import Layout from '@/components/Layout'
 import { Module } from '@/components/modules'
 import ErrorBlock from '@/components/ErrorBlock'
-import Head from 'next/head'
 import { urlFor } from '@/utils/sanityFetch/sanity'
 import { Router } from 'next/router'
 
