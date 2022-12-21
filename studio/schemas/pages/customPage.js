@@ -3,10 +3,11 @@ export default {
   type: 'document',
   title: 'Pages',
   groups: [
-    { title: 'Content', name: 'content', default: true },
+    { title: 'Content', name: 'content' },
     { title: 'Settings', name: 'settings' },
     { title: 'Seo Settings', name: 'seoSettings' },
   ],
+  
   fields: [
     {
       name: 'title',
@@ -23,6 +24,7 @@ export default {
       options: {
         source: 'title',
       },
+      hidden: ({document}) => document?.slug?.current == "frontPage"
     },
     {
       name: 'menuTitle',
