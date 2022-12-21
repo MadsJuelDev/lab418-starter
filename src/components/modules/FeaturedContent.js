@@ -3,8 +3,9 @@ import { urlFor } from '@/utils/sanityFetch/sanity'
 import RichTextEditor from './RichTextEditor'
 
 const FeaturedContent = ({ data }) => {
+  console.log('',data)
   return (
-    <div className={`customFeatured ${data.cutsomclass}`}>
+    <div className={`customFeatured ${data.customclass}`}>
       <div className='customFeaturedWrapper'>
         <div className='customFeaturedGrid'>
           {data.bgtype === 'photo' && (
