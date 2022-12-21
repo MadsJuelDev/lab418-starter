@@ -1,4 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
+import T from '@sanity/base/initial-value-template-builder'
 import React from 'react'
 
 export default () =>
@@ -13,8 +14,8 @@ export default () =>
         .title('Pages')
         .child((pageId) =>
           S.documentList()
-            .title('Posts')
-            .filter('_type == "pages" && _id!= "frontPage"')
+            .title('Pages')
+            .filter('_type == "pages" && slug.current!= "frontPage"')
             .params({ pageId })
         ),
       S.divider(),

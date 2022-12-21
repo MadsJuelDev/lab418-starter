@@ -52,7 +52,7 @@ export default {
       title: 'Align content left or right',
       name: 'alternate',
       type: 'boolean',
-      initialValue: false,
+      initialValue: true,
       group: 'settings',
     },
     {

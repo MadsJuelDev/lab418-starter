@@ -1,4 +1,5 @@
 import { getTypeTitles } from '../../lib/helpers'
+import React from 'react'
 
 export default {
   title: 'Content Grid',
@@ -15,6 +16,28 @@ export default {
     },
   ],
   fields: [
+    {
+      name: 'gridNote',
+      type: 'note',
+      options: {
+        headline: 'How to setup a Grid',
+        message: (
+          <>
+            Grids are first defined by the number of "spaces" they should have.
+            Visually, you can think of this like available cells in a
+            spreadsheet or table. Then, we define the columns that should exist
+            within this grid, and what "space(s)" they should occupy at
+            different screen sizes. For more information, see{' '}
+            <a
+              href='https://m2.material.io/design/layout/responsive-layout-grid.html'
+              target='_blank'
+            >
+              Material Design's documentation on responsive layout grids
+            </a>
+          </>
+        ),
+      },
+    },
     {
       title: 'Custom Class',
       name: 'customClass',
