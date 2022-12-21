@@ -13,7 +13,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "media-library"
+    "media-library",
+    "note-field"
   ],
   "env": {
     "development": {
