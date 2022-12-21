@@ -17,8 +17,10 @@ export async function getCustomPage(slug) {
       ...
     },
       _type=="featuredContent" => {
-      ...
-    },
+        ...,
+        videomedia{...,defined(asset) => asset->},
+        content[]{...,markDefs[]{...,defined(intLink) => intLink->{"href":slug.current}}}
+      },
     _type=="imageBlock" => {
       ...
     },

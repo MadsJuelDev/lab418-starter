@@ -94,24 +94,13 @@ export default {
       },
     },
     {
-      name: 'video',
-      type: 'object',
-      group: 'media',
-      fields: [
-        {
-          title: 'Background Video',
-          name: 'id',
-          type: 'string',
-          description:
-            'Alternatively, enter a vimeo ID to show a looping video instead',
-        },
-        {
-          title: 'Background Video Title',
-          name: 'title',
-          type: 'string',
-          description: 'Short title/description of the video',
-        },
-      ],
+      title: 'Video Title',
+      name: 'videomedia',
+      type: 'file',
+      description: 'upload a video file (.mp4)',
+      options: {
+        accept: 'video/*',
+      },
       hidden: ({ parent }) => {
         return parent.bgtype !== 'video'
       },

@@ -22,7 +22,7 @@ const FeaturedContent = ({ data }) => {
           )}
           {data.bgtype === 'video' && (
             <div className='customFeaturedVideowrapper'>
-              {data.video.asset._ref && (
+              {data.videomedia.asset._ref && (
                 <video
                   className='customFeaturedVideo'
                   height={500}
