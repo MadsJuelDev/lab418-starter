@@ -2,26 +2,11 @@ export default {
   title: 'Image Block',
   name: 'imageBlock',
   type: 'object',
-  fieldsets: [
-    {
-      title: '',
-      name: 'options',
-      options: { columns: 2 },
-    },
-  ],
   fields: [
     {
       title: 'Title',
       name: 'title',
       type: 'string',
-      fieldset: 'options',
-    },
-    {
-      title: 'Show title?',
-      name: 'active',
-      type: 'boolean',
-      fieldset: 'options',
-      initialValue: true,
     },
     {
       title: 'Custom Class',
@@ -31,8 +16,8 @@ export default {
         '*For developers* Add a custom class that can be targeted through CSS ',
     },
     {
-      title: 'Poster',
-      name: 'poster',
+      title: 'Photo',
+      name: 'photo',
       type: 'image',
       options: {
         hotspot: true, // <-- Defaults to false
@@ -53,12 +38,12 @@ export default {
   preview: {
     select: {
       title: 'title',
-      poster: 'poster',
+      photo: 'photo',
     },
-    prepare({ title, poster }) {
+    prepare({ title, photo }) {
       return {
         title: 'Image: ' + title,
-        media: poster,
+        media: photo,
       }
     },
   },

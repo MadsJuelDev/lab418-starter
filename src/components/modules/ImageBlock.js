@@ -4,12 +4,11 @@ import { urlFor } from '@/utils/sanityFetch/sanity'
 const ImageBlock = ({ data }) => {
   return (
     <div className={`imageBlock ${data.customClass}`}>
-      {data.poster.asset._ref && (
+      {data.photo.asset._ref && (
         <Image
-          src={urlFor(data.poster).url()}
+          src={urlFor(data.photo).url()}
           fill
-          className='object-cover'
-          alt={data.poster.alt}
+          alt={data.photo.alt}
         />
       )}
     </div>

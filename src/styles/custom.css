@@ -147,7 +147,11 @@ Image block
 ----------------------*/
 
 .imageBlock {
-  @apply h-[75vh] relative max-h-[100vh];
+  @apply h-[75vh] relative max-h-[100vh] max-w-[100%];
+  img{
+    @apply object-cover;
+    position: relative !important;
+  }
 }
 
 /*----------------------
@@ -228,4 +232,11 @@ Footer
 
 .customFooter {
   @apply px-4 lg:px-6 py-2.5 bg-primary-dark text-primary-light;
+  .imageBlock {
+    img{
+      @apply object-contain;
+
+    }
+  }
 }
+

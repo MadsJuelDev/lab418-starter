@@ -86,7 +86,7 @@ export default {
       // validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Poster',
+      title: 'Photo',
       name: 'photo',
       type: 'image',
       group: 'media',

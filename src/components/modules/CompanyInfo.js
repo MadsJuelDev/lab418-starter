@@ -15,7 +15,7 @@ const CompanyInfo = ({ data }) => {
         {data.companyName === true && <li>{info.companyName}</li>}
         {data.cvr && <li>{info.cvr}</li>}
         {data.address && <li>{info.address}</li>}
-        {data.postal && <li>{info.postalCode}</li>}
+        {data.postalCode && <li>{info.postalCode}</li>}
         {data.email && (
           <li>
             <a

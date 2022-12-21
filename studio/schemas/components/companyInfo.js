@@ -16,6 +16,13 @@ export default {
   ],
   fields: [
     {
+      title: 'Custom Class',
+      name: 'customClass',
+      type: 'string',
+      description:
+        '*For developers* Add a custom class that can be targeted through CSS ',
+    },
+    {
       title: 'Company name',
       name: 'companyName',
       type: 'boolean',

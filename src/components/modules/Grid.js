@@ -36,7 +36,7 @@ const Grid = ({ data = {} }) => {
   return (
     <div className={`customGrid ${data.customClass}`}>
       <div className='mx-auto'>
-        <div className={`grid grid-cols-${size} gap-x-4 gap-y-12 `}>
+        <div className={`grid grid-cols-${size} gap-x-4 gap-y-12 relative`}>
           {columns.map((col, key) => {
             const { sizes, blocks } = col
             return (
