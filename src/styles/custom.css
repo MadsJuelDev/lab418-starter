@@ -74,7 +74,25 @@
    Featured content
 
 ----------------------*/
+.customFeatured {
+  &Wrapper {
+    @apply relative mx-14 py-40 sm:py-20  px-6 lg:px-8;
+  }
 
+  &Grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-8;
+  }
+  &Photo {
+    @apply flex justify-center align-middle;
+  }
+  &VideoWrapper {
+  }
+  &Video {
+  }
+  &Content {
+    @apply mx-auto my-auto;
+  }
+}
 /*----------------------
 
  Marquee
@@ -118,8 +136,8 @@
 
 ----------------------*/
 
-.linkList{
-    @apply flex flex-col gap-3 relative
+.linkList {
+  @apply flex flex-col gap-3 relative;
 }
 
 /*----------------------
@@ -128,8 +146,8 @@ Image block
 
 ----------------------*/
 
-.imageBlock{
-    @apply h-[75vh] relative max-h-[100vh];
+.imageBlock {
+  @apply h-[75vh] relative max-h-[100vh];
 }
 
 /*----------------------

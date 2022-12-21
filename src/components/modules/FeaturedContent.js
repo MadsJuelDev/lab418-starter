@@ -4,69 +4,54 @@ import RichTextEditor from './RichTextEditor'
 
 const FeaturedContent = ({ data }) => {
   return (
-    <div className={data.cutsomclass}>
-      {/* image left */}
-      {data.alternate == false && (
-        <div className='relative px-6 lg:px-8'>
-          <div className='mx-auto max-w-3xl py-40 sm:py-20'>
-            <div className='grid grid-cols-2'>
-              {data.bgtype === 'photo' && (
-                <>
-                  {data.photo.asset._ref && (
-                    <Image
-                      src={urlFor(data.photo).width(500).height(500).url()}
-                      width='500'
-                      height='500'
-                      className='hero--bg -z-10'
-                      alt={data.photo.alt}
-                    />
-                  )}
-                </>
+    <div className={`customFeatured ${data.cutsomclass}`}>
+      <div className='customFeaturedWrapper'>
+        <div className='customFeaturedGrid'>
+          {data.bgtype === 'photo' && (
+            <div className='customFeaturedPhoto'>
+              {data.photo.asset._ref && (
+                <Image
+                  src={urlFor(data.photo).width(500).height(500).url()}
+                  width='500'
+                  height='500'
+                  className='-z-10 object-contain'
+                  alt={data.photo.alt}
+                />
               )}
-              <div className='mx-auto my-auto'>
-                {data.active > 0 && (
-                  <h1 className='mb-5 text-4xl font-bold tracking-tight sm:text-6xl'>
-                    {data.title}
-                  </h1>
-                )}
-                <RichTextEditor data={data} />
-              </div>
             </div>
+          )}
+          {data.bgtype === 'video' && (
+            <div className='customFeaturedVideowrapper'>
+              {data.video.asset._ref && (
+                <video
+                  className='customFeaturedVideo'
+                  height={500}
+                  width={500}
+                  autoPlay
+                  muted
+                  loop
+                  src={data.videomedia.url}
+                >
+                  <source type='video/.mp4' />
+                  Your browser does not support the video tag.
+                </video>
+              )}
+            </div>
+          )}
+          <div
+            className={`customFeaturedContent ${
+              data.alternate === true ? 'sm:order-last' : 'sm:order-first'
+            }`}
+          >
+            {data.active > 0 && (
+              <h1 className='mb-5 text-4xl font-bold tracking-tight sm:text-6xl'>
+                {data.title}
+              </h1>
+            )}
+            <RichTextEditor data={data} />
           </div>
         </div>
-      )}
-      {/* image right */}
-      {data.alternate == true && (
-        <div className='relative px-6 lg:px-8'>
-          <div className='mx-auto max-w-3xl py-40 sm:py-20'>
-            <div className='grid grid-cols-2'>
-              <div className='mx-auto my-auto'>
-                {data.active > 0 && (
-                  <h1 className='mb-5 text-4xl font-bold tracking-tight sm:text-6xl'>
-                    {data.title}
-                  </h1>
-                )}
-                <RichTextEditor data={data} />
-              </div>
-              <div>
-                {data.bgtype === 'photo' && (
-                  <>
-                    {data.photo.asset._ref && (
-                      <Image
-                        src={urlFor(data.photo).url()}
-                        width='500'
-                        height='500'
-                        className='hero--bg -z-10'
-                        alt={data.photo.alt}
-                      />
-                    )}
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   )
 }
