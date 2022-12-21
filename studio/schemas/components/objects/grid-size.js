@@ -77,7 +77,7 @@ export default {
         ],
       },
       validation: (Rule) => Rule.required(),
-      initialValue: '6',
+      initialValue: 6,
       fieldset: 'sizes',
     },
     {
