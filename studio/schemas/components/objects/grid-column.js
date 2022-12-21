@@ -25,7 +25,7 @@ export default {
       type: 'array',
       description: 'The content that exists inside this column',
       of: [
-        { type: 'richtexteditor' },
+        { type: 'richTextEditor' },
         { type: 'gallery' },
         { type: 'linkList' },
         { type: 'settings' },

@@ -1,16 +1,3 @@
-/*
-Comments
-Needs to be added. 
-Site settings:
-Firmanavn
-adresse
-cvr
-email
-mobil
-
-socialemedier fb,insta
-*/
-
 export default {
   title: 'Settings',
   name: 'settings',

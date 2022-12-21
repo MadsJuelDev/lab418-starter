@@ -37,13 +37,14 @@ export default {
       of: [
         { type: 'hero' },
         { type: 'grid' },
-        { type: 'richtexteditor' },
+        { type: 'richTextEditor' },
         { type: 'featuredContent' },
         { type: 'imageBlock' },
         { type: 'marquee' },
         { type: 'gallery' },
         { type: 'youtube' },
         { type: 'linkList' },
+        { type: 'siteConfig' },
         { type: 'settings' },
         // {
         //   title: 'Reusable Section',

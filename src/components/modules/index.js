@@ -2,7 +2,6 @@ import React from 'react'
 import Hero from './Hero'
 import Grid from './Grid'
 import Gallery from './Gallery'
-import RichTextEditor from './RichTextEditor'
 import FeaturedContent from './FeaturedContent'
 import Marquee from './Marquee'
 import YoutubeBlock from './YoutubeBlock'
@@ -11,11 +10,11 @@ import ImageBlock from './ImageBlock'
 import ErrorBlock from '../ErrorBlock'
 import SiteSettings from './SiteSettings'
 import SiteConfig from './SiteConfig'
+import RichTextEditor from './RichTextEditor'
 
 export const Module = ({ index, data }) => {
   const ModuleType = {
     hero: Hero,
-    RichTextEditor: RichTextEditor,
     grid: Grid,
     featuredContent: FeaturedContent,
     marquee: Marquee,
@@ -25,6 +24,7 @@ export const Module = ({ index, data }) => {
     imageBlock: ImageBlock,
     settings: SiteSettings,
     siteConfig: SiteConfig,
+    richTextEditor: RichTextEditor,
   }[data?._type] ?? <ErrorBlock errorData='Error loading module' />
   return (
     <ModuleType

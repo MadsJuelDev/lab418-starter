@@ -10,7 +10,7 @@ export default {
       of: [
         { type: 'hero' },
         { type: 'grid' },
-        { type: 'richtexteditor' },
+        { type: 'richTextEditor' },
         { type: 'featuredContent' },
         { type: 'marquee' },
         { type: 'gallery' },
