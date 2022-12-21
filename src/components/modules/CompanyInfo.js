@@ -1,5 +1,5 @@
 import { getSiteConfig } from '@/utils/sanityFetch/getSiteConfig'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const CompanyInfo = ({ data }) => {
   const [info, setInfo] = useState(0)
@@ -31,8 +31,28 @@ const CompanyInfo = ({ data }) => {
             <a href={`tel:${info.phone}`}>{info.phone}</a>
           </li>
         )}
-        {data.facebook && <li><a href={info.facebook} target="_blank">Facebook</a></li>}
-        {data.instagram && <li><a href={info.instagram} target="_blank">Instagram</a></li>}
+        {data.facebook && (
+          <li>
+            <a
+              href={info.facebook}
+              target='_blank'
+              rel='noreferrer'
+            >
+              Facebook
+            </a>
+          </li>
+        )}
+        {data.instagram && (
+          <li>
+            <a
+              href={info.instagram}
+              target='_blank'
+              rel='noreferrer'
+            >
+              Instagram
+            </a>
+          </li>
+        )}
       </ul>
     </div>
   )
