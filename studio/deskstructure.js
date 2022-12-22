@@ -1,5 +1,4 @@
 import S from '@sanity/desk-tool/structure-builder'
-import T from '@sanity/base/initial-value-template-builder'
 import React from 'react'
 
 export default () =>
@@ -12,11 +11,10 @@ export default () =>
         .icon(() => '📰'),
       S.listItem()
         .title('Pages')
-        .child((pageId) =>
+        .child(() =>
           S.documentList()
             .title('Pages')
             .filter('_type == "pages" && slug.current!= "frontPage"')
-            .params({ pageId })
         ),
       S.divider(),
       S.listItem()
@@ -31,7 +29,5 @@ export default () =>
         .title('Footer')
         .child(S.document().schemaType('footer').documentId('footer'))
         .icon(() => '🦶'),
-      ...S.documentTypeListItems().filter(
-        (listItem) => !['pages', 'homepage'].includes(listItem.getId())
-      ),
+      
     ])
