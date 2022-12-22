@@ -167,7 +167,7 @@ Header
     @apply hidden flex-wrap justify-between items-center mx-auto max-w-screen-xl lg:flex;
 
     img {
-      @apply mr-3 h-9;
+      @apply w-auto h-9;
     }
 
     &Menu {

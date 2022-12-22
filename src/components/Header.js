@@ -20,7 +20,7 @@ function Header() {
               src='/logo.png'
               alt='Logo'
               width={50}
-              height={100}
+              height={50}
             />
           </Link>
           <div className='customHeaderDesktopMenu'>
