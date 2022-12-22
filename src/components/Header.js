@@ -17,8 +17,8 @@ function Header() {
         <div className='customHeaderDesktop'>
           <Link href='/'>
             <Image
-              src='/logo-tea.png'
-              alt='Lab-418 Logo'
+              src='/logo.png'
+              alt='Logo'
               width={50}
               height={100}
             />
