@@ -8,14 +8,16 @@ import { Router } from 'next/router'
 export default function customPage({ data }) {
   const pageData = data
   const seoField = pageData?.seoField ? pageData.seoField : undefined
-  const seoImageLink = seoField?.seoImage ? urlFor(seoField.seoImage).width(1200).height(630).url() : 'undefined'
+  const seoImageLink = seoField?.seoImage
+    ? urlFor(seoField.seoImage).width(1200).height(630).url()
+    : 'undefined'
   const renderResult = () => {
     if (pageData == undefined) {
-      return <ErrorBlock data="Error when loading data"/>
+      return <ErrorBlock data='Error when loading data' />
     }
     if (pageData) {
       return (
-        <Layout data={{seo: seoField, title: pageData.title, seoImageLink}}>
+        <Layout data={{ seo: seoField, title: pageData.title, seoImageLink }}>
           <div>
             {pageData?.components?.map((component, index) => (
               <Module
@@ -33,7 +35,7 @@ export default function customPage({ data }) {
 }
 
 export async function getStaticProps({ params }) {
-  if(params.slug == '404'){
+  if (params.slug == '404') {
     const route = new Router()
     route.go('404')
   }
@@ -42,6 +44,7 @@ export async function getStaticProps({ params }) {
     props: {
       data,
     },
+    revalidate: 20,
   }
 }
 
@@ -52,17 +55,18 @@ export async function getStaticPaths() {
     paths:
       pageSlugs?.map((page) => {
         const slugs = page.slug
-        if(!slugs) return {
-          params: {
-            slug: '404',
-          },
-        }
+        if (!slugs)
+          return {
+            params: {
+              slug: '404',
+            },
+          }
         return {
           params: {
             slug: slugs,
           },
         }
       }) || [],
-    fallback: false,
+    fallback: 'blocking',
   }
 }
