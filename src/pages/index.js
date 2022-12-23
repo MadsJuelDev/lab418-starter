@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout'
-import getHomepage from '@/sanityFetch/homepage'
 import { Module } from '@/components/modules'
 import ErrorBlock from '@/components/ErrorBlock'
 import { urlFor } from '@/utils/sanityFetch/sanity'
