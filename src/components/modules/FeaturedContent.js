@@ -3,7 +3,6 @@ import { urlFor } from '@/utils/sanityFetch/sanity'
 import RichTextEditor from './RichTextEditor'
 
 const FeaturedContent = ({ data }) => {
-  console.log('',data)
   return (
     <div className={`customFeatured ${data.customclass}`}>
       <div className='customFeaturedWrapper'>

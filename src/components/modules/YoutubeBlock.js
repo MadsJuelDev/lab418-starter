@@ -1,7 +1,6 @@
 import getYouTubeId from 'get-youtube-id'
 
 const YoutubeBlock = ({ data }) => {
-  console.log(data)
 
   const id = getYouTubeId(data.url)
   const yturl = `https://www.youtube-nocookie.com/embed/${id}`

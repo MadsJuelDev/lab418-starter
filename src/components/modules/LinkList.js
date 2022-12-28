@@ -24,7 +24,7 @@ const LinkList = ({ data }) => {
                 )}
               </li>
             ))
-          : console.log('Error loading list')}
+          : console.log('Loading list')}
       </ul>
   )
 }

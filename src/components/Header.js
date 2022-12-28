@@ -33,7 +33,7 @@ function Header() {
                       <Link href={navItem.slug.current}>{navItem.menuTitle}</Link>
                     </li>
                   ))
-                : console.log('Error loading nav')}
+                : console.log('Loading nav')}
             </ul>
           </div>
         </div>
@@ -70,7 +70,7 @@ function Header() {
                       <Link href={navItem.slug.current}>{navItem.menuTitle}</Link>
                     </li>
                   ))
-                : console.log('Error loading nav')}
+                : console.log('Loading nav')}
             </ul>
           </Popover.Panel>
         </Popover>

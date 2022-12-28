@@ -27,8 +27,7 @@ export const Module = ({ index, data }) => {
 
   if (ModuleType.data === null)
     return <ErrorBlock errorData='Error loading module' />
-
-  return (
+  return (  
     <ModuleType
       index={index}
       data={data}

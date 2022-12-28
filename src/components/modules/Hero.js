@@ -1,8 +1,6 @@
 import PortableText from 'react-portable-text'
 import Image from 'next/image'
 import { urlFor } from '@/utils/sanityFetch/sanity'
-import getYouTubeId from 'get-youtube-id'
-import Link from 'next/link'
 import RichTextEditor from './RichTextEditor'
 
 const Hero = ({ data }) => {
