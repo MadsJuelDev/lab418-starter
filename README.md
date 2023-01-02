@@ -1,3 +1,10 @@
+#Bachelor's Exam project PWA 2022
+##Made by:
+### Mads Juel Nielsen
+### Jonathan Evald Stenholdt Madsen
+### Christina Jancy Pedersen
+### Lars Bo Pedersen
+
 ## To run this project
 First of run 
 ```bash
